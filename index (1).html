@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lune Digital – Agence digitale complète à Libreville, Gabon. Création de sites web, gestion réseaux sociaux, SEO, publicité Meta Ads et branding professionnel.">
+<meta name="keywords" content="agence digitale Libreville, création site web Gabon, SEO Gabon, Meta Ads Libreville, community management Gabon, branding Libreville">
+<meta property="og:title" content="Lune Digital – Agence Digitale Libreville">
+<meta property="og:description" content="Boostez votre présence en ligne à Libreville avec Lune Digital.">
+<meta property="og:type" content="website">
+<title>Lune Digital – Agence Digitale à Libreville, Gabon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   LUNE DIGITAL – CSS COMPLET
+   Palette : Navy #0d1b3e · Gold #c9a84c · White #fff
+============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy:       #0d1b3e;
+  --navy2:      #152347;
+  --navy3:      #1a2e5a;
+  --gold:       #c9a84c;
+  --gold-light: #e5c87a;
+  --gold-pale:  rgba(201,168,76,0.12);
+  --white:      #ffffff;
+  --off:        #f6f4ef;
+  --muted:      #6a7a99;
+  --dark:       #080f20;
+  --radius:     12px;
+  --radius-lg:  18px;
+  --shadow:     0 14px 40px rgba(13,27,62,0.10);
+  --shadow-lg:  0 22px 60px rgba(13,27,62,0.16);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ============================================================
+   NAVIGATION
+============================================================ */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background: rgba(13,27,62,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,168,76,0.18);
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw;
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+
+.nav-left { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.ld-box {
+  width: 38px; height: 38px;
+  border: 1.5px solid var(--gold); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; color: var(--gold); font-weight: 700; letter-spacing: -1px;
+  transition: background 0.2s;
+}
+.nav-left:hover .ld-box { background: rgba(201,168,76,0.1); }
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; color: var(--gold); letter-spacing: 2.5px;
+}
+
+.nav-links { display: flex; gap: 4px; }
+.nav-links button {
+  background: none; border: none;
+  color: rgba(255,255,255,0.72);
+  font-family: 'Raleway', sans-serif;
+  font-size: 11.5px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 8px 14px; border-radius: 5px;
+  cursor: pointer; transition: all 0.2s;
+}
+.nav-links button:hover,
+.nav-links button.active {
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+}
+.nav-cta {
+  background: var(--gold); color: var(--navy);
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 22px; border-radius: 5px; border: none;
+  cursor: pointer; transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* HAMBURGER MOBILE */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--gold); border-radius: 2px;
+  transition: all 0.3s;
+}
+.mobile-menu {
+  display: none; position: fixed; top: 68px; left: 0; right: 0;
+  background: rgba(13,27,62,0.98); backdrop-filter: blur(10px);
+  z-index: 999; padding: 20px 5vw 28px;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  flex-direction: column; gap: 6px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu button {
+  background: none; border: none;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 12px 0; text-align: left;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  cursor: pointer; transition: color 0.2s;
+}
+.mobile-menu button:hover { color: var(--gold); }
+
+/* ============================================================
+   PAGES
+============================================================ */
+.page { display: none; min-height: 100vh; padding-top: 68px; }
+.page.active { display: block; }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  min-height: calc(100vh - 68px);
+  background: linear-gradient(155deg, #060d1c 0%, #0d1b3e 50%, #152347 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 70px 5vw 60px;
+  position: relative; overflow: hidden;
+}
+.hero-glow-1 {
+  position: absolute; top: -25%; left: -15%;
+  width: 65%; height: 65%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.09) 0%, transparent 68%);
+  pointer-events: none;
+}
+.hero-glow-2 {
+  position: absolute; bottom: -20%; right: -10%;
+  width: 50%; height: 50%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 68%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-block;
+  border: 1px solid rgba(201,168,76,0.35);
+  color: var(--gold); font-size: 10px;
+  letter-spacing: 3.5px; text-transform: uppercase;
+  padding: 7px 24px; border-radius: 30px;
+  background: rgba(201,168,76,0.06);
+  margin-bottom: 38px;
+  animation: fadeDown 0.8s ease both;
+}
+.hero-logo {
+  width: 100px; height: 100px;
+  border: 2px solid var(--gold); border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px; color: var(--gold); font-weight: 700; letter-spacing: -3px;
+  margin: 0 auto 32px;
+  background: rgba(201,168,76,0.05);
+  animation: fadeDown 0.9s ease 0.1s both;
+  box-shadow: 0 0 40px rgba(201,168,76,0.12);
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  color: var(--white); letter-spacing: 7px;
+  margin-bottom: 14px;
+  animation: fadeDown 1s ease 0.2s both;
+}
+.hero h1 em { color: var(--gold); font-style: normal; }
+.hero-sub {
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  letter-spacing: 2.5px; text-transform: uppercase;
+  font-weight: 300; margin-bottom: 20px;
+  animation: fadeDown 1s ease 0.3s both;
+}
+.hero-slogan {
+  font-size: 17px; color: rgba(255,255,255,0.88);
+  max-width: 500px; line-height: 1.75; margin-bottom: 52px;
+  animation: fadeDown 1s ease 0.35s both;
+}
+.hero-btns {
+  display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  animation: fadeDown 1s ease 0.4s both;
+}
+.hero-stats {
+  display: flex; gap: 56px; flex-wrap: wrap; justify-content: center;
+  margin-top: 72px; padding-top: 48px;
+  border-top: 1px solid rgba(201,168,76,0.18);
+  animation: fadeIn 1.2s ease 0.6s both;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; color: var(--gold); font-weight: 700; line-height: 1;
+}
+.stat-txt {
+  font-size: 11px; color: rgba(255,255,255,0.45);
+  letter-spacing: 1.2px; text-transform: uppercase; margin-top: 6px;
+}
+.gold-line {
+  width: 60px; height: 2px; background: var(--gold);
+  border-radius: 2px; margin: 56px auto 0;
+  animation: fadeIn 1.2s ease 0.5s both;
+}
+
+/* ============================================================
+   BOUTONS GLOBAUX
+============================================================ */
+.btn-g {
+  background: var(--gold); color: var(--navy);
+  padding: 14px 40px; border-radius: 5px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700; font-size: 12px; letter-spacing: 1.5px;
+  text-transform: uppercase; border: none; cursor: pointer;
+  transition: all 0.2s; display: inline-block;
+}
+.btn-g:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+.btn-o {
+  border: 1.5px solid var(--gold); color: var(--gold);
+  padding: 13px 40px; border-radius: 5px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600; font-size: 12px; letter-spacing: 1.5px;
+  text-transform: uppercase; background: transparent; cursor: pointer;
+  transition: all 0.2s; display: inline-block;
+}
+.btn-o:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
+.btn-full { width: 100%; padding: 15px; text-align: center; }
+
+/* ============================================================
+   SECTIONS COMMUNES
+============================================================ */
+.sec        { padding: 88px 5vw; }
+.sec-bg     { background: var(--off); }
+.sec-dark   { background: linear-gradient(135deg, #0d1b3e, #152347); }
+.center     { text-align: center; }
+
+.lbl {
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600; margin-bottom: 10px; display: block;
+}
+.lbl-w { color: var(--gold-light); }
+.ttl {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 3vw, 2.7rem);
+  color: var(--navy); margin-bottom: 14px;
+}
+.ttl-w { color: var(--white); }
+.divider { width: 50px; height: 2px; background: var(--gold); margin-bottom: 46px; border-radius: 2px; }
+.divider.c { margin-left: auto; margin-right: auto; }
+
+/* ============================================================
+   PAGE ACCUEIL – pôles rapides
+============================================================ */
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 18px;
+}
+.quick-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 28px 20px; text-align: center;
+  border: 1px solid rgba(13,27,62,0.07);
+  border-top: 3px solid var(--gold);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.quick-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.quick-icon { font-size: 30px; margin-bottom: 14px; }
+.quick-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; color: var(--navy); margin-bottom: 6px;
+}
+.quick-card p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* Clients row */
+.clients-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px;
+}
+.client-c {
+  border: 1px solid rgba(201,168,76,0.22); border-radius: var(--radius);
+  padding: 24px 22px; background: rgba(201,168,76,0.04);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.client-c:hover { border-color: var(--gold); transform: translateY(-3px); }
+.gold-star { color: var(--gold); font-size: 14px; margin-bottom: 10px; }
+.client-c h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; color: var(--navy); margin-bottom: 5px;
+}
+.client-c p { font-size: 12px; color: var(--muted); }
+
+/* Avantages dark */
+.avantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+.av-item { text-align: center; padding: 36px 20px; }
+.av-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; color: var(--gold); font-weight: 700; line-height: 1;
+}
+.av-item p { font-size: 14px; color: rgba(255,255,255,0.72); margin-top: 12px; letter-spacing: 0.3px; }
+
+/* ============================================================
+   PAGE À PROPOS
+============================================================ */
+.about-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.about-visual {
+  background: linear-gradient(145deg, #0d1b3e, #1a2e5a);
+  border-radius: var(--radius-lg); padding: 52px 40px; text-align: center;
+  position: relative; overflow: hidden; box-shadow: var(--shadow-lg);
+}
+.about-visual::before {
+  content: ''; position: absolute; top: -30%; right: -20%;
+  width: 60%; height: 60%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.14) 0%, transparent 70%);
+}
+.big-ld {
+  font-family: 'Playfair Display', serif;
+  font-size: 7rem; color: rgba(201,168,76,0.13); font-weight: 700;
+  line-height: 1; margin-bottom: 24px;
+}
+.about-visual h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; color: var(--gold); margin-bottom: 12px;
+}
+.about-visual p { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.8; }
+.about-content p { font-size: 15px; color: #4a5a78; line-height: 1.85; margin-bottom: 20px; }
+.values-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.values-list li { display: flex; align-items: center; gap: 13px; font-size: 14px; color: var(--navy); font-weight: 500; }
+.val-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+/* Raisons grid */
+.raisons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+}
+.raison-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 32px 24px; text-align: center;
+  border: 1px solid rgba(13,27,62,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.raison-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.raison-icon { font-size: 2.8rem; font-family: 'Playfair Display', serif; color: var(--gold); font-weight: 700; line-height: 1; }
+.raison-card h4 { font-weight: 700; font-size: 15px; color: var(--navy); margin: 10px 0 6px; }
+.raison-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ============================================================
+   PAGE SERVICES – PÔLES
+============================================================ */
+.poles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 26px;
+}
+.pole {
+  background: var(--white); border-radius: var(--radius-lg);
+  border: 1px solid rgba(13,27,62,0.07);
+  overflow: hidden; transition: transform 0.22s, box-shadow 0.22s;
+}
+.pole:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.pole-head {
+  background: linear-gradient(135deg, #0d1b3e, #1a2e5a);
+  padding: 22px 28px; border-bottom: 2px solid var(--gold);
+}
+.pole-head h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; color: var(--white);
+  display: flex; align-items: center; gap: 10px;
+}
+.pole-head h3 span { font-size: 22px; }
+.pole-body { padding: 22px 28px; }
+.sub-service {
+  display: flex; align-items: flex-start; gap: 11px;
+  padding: 11px 0; border-bottom: 1px solid rgba(13,27,62,0.055);
+}
+.sub-service:last-child { border-bottom: none; }
+.sub-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+.sub-service h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+.sub-service p { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+/* ============================================================
+   PAGE PORTFOLIO
+============================================================ */
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+.filter-btn {
+  border: 1px solid rgba(201,168,76,0.28); color: var(--navy);
+  background: var(--white); padding: 8px 22px;
+  border-radius: 30px; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s;
+}
+.filter-btn:hover,
+.filter-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 24px;
+}
+.port-card {
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid rgba(13,27,62,0.07);
+  transition: transform 0.22s, box-shadow 0.22s;
+  background: var(--white);
+}
+.port-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.port-thumb {
+  height: 185px; display: flex; align-items: center;
+  justify-content: center; font-size: 42px; position: relative;
+}
+.port-tag {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 6px; display: block;
+}
+.port-info { padding: 18px 22px; }
+.port-info h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; color: var(--navy); margin-bottom: 5px;
+}
+.port-info p { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+/* ============================================================
+   PAGE CONSEILS
+============================================================ */
+.conseils-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 26px;
+}
+.conseil-card {
+  background: var(--white); border: 1px solid rgba(13,27,62,0.07);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.conseil-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.conseil-head { padding: 22px 26px; border-bottom: 1px solid rgba(13,27,62,0.055); }
+.conseil-cat {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 8px; display: block;
+}
+.conseil-head h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; color: var(--navy); line-height: 1.45;
+}
+.conseil-body { padding: 20px 26px; }
+.conseil-body p { font-size: 13px; color: #5a6a88; line-height: 1.72; margin-bottom: 14px; }
+.conseil-tips { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.conseil-tips li {
+  font-size: 12.5px; color: var(--navy);
+  display: flex; align-items: flex-start; gap: 9px; line-height: 1.5;
+}
+.conseil-tips li::before { content: '✦'; color: var(--gold); font-size: 9px; margin-top: 4px; flex-shrink: 0; }
+.conseil-footer {
+  padding: 14px 26px; border-top: 1px solid rgba(13,27,62,0.055);
+  background: rgba(201,168,76,0.04);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.conseil-time { font-size: 11px; color: var(--muted); }
+.read-more {
+  font-size: 11px; font-weight: 700; color: var(--gold);
+  letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; border: none; background: none;
+  transition: opacity 0.2s;
+}
+.read-more:hover { opacity: 0.7; }
+
+/* ============================================================
+   PAGE CONTACT
+============================================================ */
+.contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 52px; }
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; color: var(--navy); margin-bottom: 16px;
+}
+.contact-info > p { font-size: 14px; color: #5a6a88; line-height: 1.8; margin-bottom: 36px; }
+.contact-items { display: flex; flex-direction: column; gap: 18px; }
+.ci { display: flex; align-items: flex-start; gap: 16px; }
+.ci-icon {
+  width: 44px; height: 44px;
+  background: var(--gold-pale); border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.ci h4 { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.ci a, .ci p { font-size: 15px; color: var(--navy); font-weight: 600; }
+.ci a:hover { color: var(--gold); }
+
+/* Formulaire */
+.form-card { background: var(--off); border-radius: var(--radius-lg); padding: 38px 34px; }
+.form-card h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--navy); margin-bottom: 6px; }
+.form-sub { font-size: 13px; color: var(--muted); margin-bottom: 30px; display: block; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); font-weight: 600; display: block; margin-bottom: 7px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; background: var(--white);
+  border: 1px solid rgba(13,27,62,0.12);
+  border-radius: 6px; padding: 11px 15px;
+  font-size: 14px; font-family: 'Raleway', sans-serif; color: var(--navy);
+  outline: none; transition: border-color 0.2s;
+  -webkit-appearance: none; appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-confirm {
+  display: none; text-align: center;
+  color: #1e7a40; font-size: 13px; font-weight: 600;
+  margin-top: 14px; padding: 12px; background: rgba(30,122,64,0.07);
+  border-radius: 6px;
+}
+
+/* Strip audit */
+.audit-strip {
+  background: linear-gradient(135deg, #0d1b3e, #1a2e5a);
+  border-radius: var(--radius-lg); padding: 40px 36px;
+  text-align: center; margin-top: 64px;
+}
+.audit-strip h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; color: var(--gold); margin-bottom: 12px;
+}
+.audit-strip p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 28px; line-height: 1.75; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  background: var(--dark); padding: 52px 5vw 24px;
+  border-top: 1px solid rgba(201,168,76,0.14);
+}
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px; margin-bottom: 44px;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; color: var(--gold); letter-spacing: 3px; margin-bottom: 12px;
+}
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.75; }
+.footer-col h5 {
+  font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 18px; font-weight: 600;
+}
+.footer-col a {
+  display: block; font-size: 13px;
+  color: rgba(255,255,255,0.45); margin-bottom: 9px;
+  cursor: pointer; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 22px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.22); }
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .about-split { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { gap: 32px; }
+}
+@media (max-width: 480px) {
+  .sec { padding: 60px 5vw; }
+  .hero h1 { letter-spacing: 4px; }
+  .form-card { padding: 26px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav id="main-nav">
+  <div class="nav-left" onclick="goTo('accueil')">
+    <div class="ld-box">LD</div>
+    <span class="nav-brand">LUNE DIGITAL</span>
+  </div>
+  <div class="nav-links">
+    <button class="active" onclick="goTo('accueil')">Accueil</button>
+    <button onclick="goTo('apropos')">À Propos</button>
+    <button onclick="goTo('services')">Services</button>
+    <button onclick="goTo('portfolio')">Portfolio</button>
+    <button onclick="goTo('conseils')">Conseils</button>
+    <button onclick="goTo('contact')">Contact</button>
+  </div>
+  <button class="nav-cta" onclick="goTo('contact')">Audit Gratuit</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button onclick="goTo('accueil');closeMenu()">Accueil</button>
+  <button onclick="goTo('apropos');closeMenu()">À Propos</button>
+  <button onclick="goTo('services');closeMenu()">Services</button>
+  <button onclick="goTo('portfolio');closeMenu()">Portfolio</button>
+  <button onclick="goTo('conseils');closeMenu()">Conseils</button>
+  <button onclick="goTo('contact');closeMenu()">Contact</button>
+  <button onclick="goTo('contact');closeMenu()" style="color:var(--gold);margin-top:6px;">→ Audit Gratuit</button>
+</div>
+
+<!-- ============================================================
+     PAGE : ACCUEIL
+============================================================ -->
+<div class="page active" id="page-accueil">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-badge">Agence Digitale Complète · Libreville, Gabon</div>
+    <div class="hero-logo">LD</div>
+    <h1>LUNE <em>DIGITAL</em></h1>
+    <p class="hero-sub">Votre partenaire digital à Libreville</p>
+    <p class="hero-slogan">Boostez votre présence en ligne, modernisez votre entreprise et attirez plus de clients dès aujourd'hui.</p>
+    <div class="hero-btns">
+      <button class="btn-g" onclick="goTo('contact')">Audit Gratuit Offert</button>
+      <button class="btn-o" onclick="goTo('services')">Découvrir nos Services</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">5</div><div class="stat-txt">Pôles de services</div></div>
+      <div class="stat-item"><div class="stat-num">4+</div><div class="stat-txt">Clients actifs</div></div>
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-txt">Résultats mesurables</div></div>
+      <div class="stat-item"><div class="stat-num">∞</div><div class="stat-txt">Ambition digitale</div></div>
+    </div>
+    <div class="gold-line"></div>
+  </section>
+
+  <!-- 5 PÔLES RAPIDES -->
+  <section class="sec sec-bg">
+    <span class="lbl">Ce que nous proposons</span>
+    <h2 class="ttl">Nos 5 Pôles d'Expertise</h2>
+    <div class="divider"></div>
+    <div class="quick-grid">
+      <div class="quick-card">
+        <div class="quick-icon">🎨</div>
+        <h4>Identité Visuelle & Branding</h4>
+        <p>Logo, charte graphique, supports de communication physiques.</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon">🌐</div>
+        <h4>Web & E-commerce</h4>
+        <p>Sites vitrines, boutiques en ligne, landing pages, maintenance.</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon">📈</div>
+        <h4>SEO & Visibilité</h4>
+        <p>Référencement Google, Google Maps, audit de présence.</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon">📱</div>
+        <h4>Social Media</h4>
+        <p>Community management, création de contenu, stratégie réseaux.</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon">🚀</div>
+        <h4>Publicité & Performance</h4>
+        <p>Meta Ads, Google Ads, influence & sponsoring.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="sec">
+    <span class="lbl">Ils nous font confiance</span>
+    <h2 class="ttl">Nos Références</h2>
+    <div class="divider"></div>
+    <div class="clients-row">
+      <div class="client-c"><div class="gold-star">✦</div><h4>ARCY Services SEEG</h4><p>Boostage & gestion de page</p></div>
+      <div class="client-c"><div class="gold-star">✦</div><h4>LIVRA.CH – Genève</h4><p>Création de site vitrine</p></div>
+      <div class="client-c"><div class="gold-star">✦</div><h4>PEOPLE</h4><p>Conception graphique</p></div>
+      <div class="client-c"><div class="gold-star">✦</div><h4>BILANGA</h4><p>Agriculture – Gestion digitale</p></div>
+      <div class="client-c"><div class="gold-star">✦</div><h4>LOCATIFA</h4><p>Agence de réservation au Gabon</p></div>
+      <div class="client-c"><div class="gold-star">✦</div><h4>GABON MARKET</h4><p>Marketing & présence en ligne</p></div>
+    </div>
+  </section>
+
+  <!-- AVANTAGES DARK -->
+  <section class="sec sec-dark center">
+    <span class="lbl lbl-w">Pourquoi Lune Digital</span>
+    <h2 class="ttl ttl-w">Ce que ça vous rapporte</h2>
+    <div class="divider c"></div>
+    <div class="avantages-grid">
+      <div class="av-item"><div class="av-num">+</div><p>Plus de clients qualifiés chaque mois</p></div>
+      <div class="av-item"><div class="av-num">★</div><p>Image professionnelle et moderne</p></div>
+      <div class="av-item"><div class="av-num">↑</div><p>Augmentation de vos ventes en ligne</p></div>
+      <div class="av-item"><div class="av-num">⚡</div><p>Entreprise modernisée et efficace</p></div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="sec center">
+    <span class="lbl">Passons à l'action</span>
+    <h2 class="ttl">Prêt à Décoller ?</h2>
+    <div class="divider c"></div>
+    <p style="font-size:15px;color:#5a6a88;max-width:480px;margin:0 auto 36px;line-height:1.8;">Contactez Lune Digital dès aujourd'hui pour un audit gratuit de votre présence en ligne et des recommandations sur mesure.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-g" onclick="goTo('contact')">Demander un Audit Gratuit</button>
+      <button class="btn-o" onclick="goTo('portfolio')">Voir nos Réalisations</button>
+    </div>
+  </section>
+
+</div><!-- /page-accueil -->
+
+
+<!-- ============================================================
+     PAGE : À PROPOS
+============================================================ -->
+<div class="page" id="page-apropos">
+
+  <section class="sec">
+    <div class="about-split">
+      <div class="about-visual">
+        <div class="big-ld">LD</div>
+        <h3>Lune Digital</h3>
+        <p>Votre agence digitale complète à Libreville, Gabon. Nous accompagnons les entreprises locales et internationales dans leur transformation numérique avec passion et expertise.</p>
+      </div>
+      <div class="about-content">
+        <span class="lbl">Qui sommes-nous</span>
+        <h2 class="ttl">Notre Mission</h2>
+        <div class="divider"></div>
+        <p>Lune Digital est une agence digitale complète basée à Libreville Charbonnages, dédiée à booster la présence en ligne des entreprises gabonaises et africaines.</p>
+        <p>Nous combinons créativité, technologie et stratégie pour offrir des solutions digitales qui génèrent de vrais résultats : plus de visibilité, plus de clients, plus de ventes.</p>
+        <p>Notre équipe maîtrise l'ensemble de la chaîne digitale : du design à la publicité, du site web au référencement, pour que vous n'ayez qu'un seul interlocuteur.</p>
+        <ul class="values-list">
+          <li><span class="val-dot"></span>Excellence & Professionnalisme</li>
+          <li><span class="val-dot"></span>Résultats mesurables et concrets</li>
+          <li><span class="val-dot"></span>Innovation continue</li>
+          <li><span class="val-dot"></span>Accompagnement personnalisé</li>
+          <li><span class="val-dot"></span>Présence locale, vision internationale</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-bg">
+    <span class="lbl center" style="display:block;text-align:center;">Pourquoi nous choisir</span>
+    <h2 class="ttl center">Nos Avantages</h2>
+    <div class="divider c"></div>
+    <div class="raisons-grid">
+      <div class="raison-card"><div class="raison-icon">+</div><h4>Plus de clients</h4><p>Atteignez de nouveaux prospects chaque jour grâce à nos stratégies digitales.</p></div>
+      <div class="raison-card"><div class="raison-icon">★</div><h4>Image professionnelle</h4><p>Inspirez confiance à vos clients avec une présence en ligne soignée.</p></div>
+      <div class="raison-card"><div class="raison-icon">↑</div><h4>Plus de ventes</h4><p>Convertissez vos visiteurs en acheteurs grâce à des tunnels de vente optimisés.</p></div>
+      <div class="raison-card"><div class="raison-icon">⚡</div><h4>Entreprise modernisée</h4><p>Digitalisez vos processus, gagnez du temps et de l'efficacité.</p></div>
+    </div>
+  </section>
+
+</div><!-- /page-apropos -->
+
+
+<!-- ============================================================
+     PAGE : SERVICES
+============================================================ -->
+<div class="page" id="page-services">
+
+  <section class="sec">
+    <span class="lbl">Notre offre complète</span>
+    <h2 class="ttl">Tous Nos Services</h2>
+    <div class="divider"></div>
+    <div class="poles-grid">
+
+      <!-- PÔLE 1 -->
+      <div class="pole">
+        <div class="pole-head"><h3><span>🎨</span> Identité Visuelle & Branding</h3></div>
+        <div class="pole-body">
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Création de Logo Professionnel</h4><p>Design unique, vectoriel, déclinaisons couleurs & noir/blanc.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Charte Graphique Complète</h4><p>Polices, codes couleurs, règles d'utilisation.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Supports de Communication Physiques</h4><p>Cartes de visite haut de gamme, flyers, dépliants, brochures commerciales, menus.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Kit Réseaux Sociaux</h4><p>Bannières, photos de profil optimisées pour toutes les plateformes.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PÔLE 2 -->
+      <div class="pole">
+        <div class="pole-head"><h3><span>🌐</span> Web & E-commerce</h3></div>
+        <div class="pole-body">
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Site Internet Vitrine (Pack 5 pages)</h4><p>Accueil, À propos, Services, Galerie, Contact.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Boutique en Ligne (E-commerce)</h4><p>Configuration catalogue, stocks, paiements locaux & internationaux.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Landing Pages</h4><p>Pages de vente spécifiques pour vos campagnes publicitaires.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Maintenance & Hébergement</h4><p>Sécurisation, mises à jour régulières, sauvegardes automatiques.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PÔLE 3 -->
+      <div class="pole">
+        <div class="pole-head"><h3><span>📈</span> Visibilité & Référencement (SEO)</h3></div>
+        <div class="pole-body">
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Référencement Naturel (SEO)</h4><p>Optimisation technique, mots-clés stratégiques, première page Google.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Optimisation Google Maps (Local SEO)</h4><p>Création et optimisation de votre fiche Google Business Profile.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Audit de Visibilité</h4><p>Analyse complète et détaillée de votre présence en ligne.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PÔLE 4 -->
+      <div class="pole">
+        <div class="pole-head"><h3><span>📱</span> Social Media & Community Management</h3></div>
+        <div class="pole-body">
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Création de Pages</h4><p>Configuration professionnelle Facebook, Instagram, TikTok, LinkedIn.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Community Management</h4><p>Rédaction, planification des publications, réponse aux commentaires.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Création de Contenu (Content Marketing)</h4><p>Design visuels professionnels, blog posts, newsletters.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PÔLE 5 -->
+      <div class="pole">
+        <div class="pole-head"><h3><span>🚀</span> Publicité & Performance (Ads)</h3></div>
+        <div class="pole-body">
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Facebook & Instagram Ads</h4><p>Campagnes sponsorisées ciblées pour attirer vos clients rapidement.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Google Ads</h4><p>Publicité sur moteur de recherche, ciblage précis par zone géographique.</p></div>
+          </div>
+          <div class="sub-service">
+            <div class="sub-dot"></div>
+            <div><h4>Sponsoring & Influence</h4><p>Mise en relation et gestion de partenariats avec des influenceurs.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA DEVIS -->
+  <section class="sec sec-dark center">
+    <span class="lbl lbl-w">Besoin d'un devis ?</span>
+    <h2 class="ttl ttl-w">Chaque projet est unique</h2>
+    <div class="divider c"></div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.72);max-width:460px;margin:0 auto 34px;line-height:1.8;">Contactez-nous pour un audit gratuit et une offre sur mesure adaptée à votre budget et vos objectifs.</p>
+    <button class="btn-g" onclick="goTo('contact')">Obtenir un Devis Gratuit</button>
+  </section>
+
+</div><!-- /page-services -->
+
+
+<!-- ============================================================
+     PAGE : PORTFOLIO
+============================================================ -->
+<div class="page" id="page-portfolio">
+
+  <section class="sec">
+    <span class="lbl">Nos réalisations</span>
+    <h2 class="ttl">Portfolio</h2>
+    <div class="divider"></div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterPort(this,'all')">Tous</button>
+      <button class="filter-btn" onclick="filterPort(this,'web')">Sites Web</button>
+      <button class="filter-btn" onclick="filterPort(this,'branding')">Branding</button>
+      <button class="filter-btn" onclick="filterPort(this,'social')">Social Media</button>
+      <button class="filter-btn" onclick="filterPort(this,'ads')">Publicité Ads</button>
+      <button class="filter-btn" onclick="filterPort(this,'app')">Applications</button>
+    </div>
+
+    <div class="portfolio-grid" id="port-grid">
+
+      <div class="port-card" data-cat="web">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#0d1b3e,#1a2e5a);">🌐</div>
+        <div class="port-info">
+          <span class="port-tag">Site Vitrine</span>
+          <h4>LIVRA.CH – Genève</h4>
+          <p>Site vitrine professionnel pour service de livraison basé à Genève, Suisse.</p>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="social">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#152347,#253d6e);">📱</div>
+        <div class="port-info">
+          <span class="port-tag">Social Media</span>
+          <h4>ARCY Services SEEG</h4>
+          <p>Gestion et boostage de page Facebook & Instagram, stratégie de contenu.</p>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="branding">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#c9a84c18,#e5c87a22);">🎨</div>
+        <div class="port-info">
+          <span class="port-tag">Conception Graphique</span>
+          <h4>PEOPLE</h4>
+          <p>Identité visuelle complète, supports de communication et kit réseaux sociaux.</p>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="app">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#1a2e5a,#0d1b3e);">📲</div>
+        <div class="port-info">
+          <span class="port-tag">Application Entreprise</span>
+          <h4>LAN CONSULTING</h4>
+          <p>Application web sur mesure pour la gestion et la modernisation de l'entreprise.</p>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="ads">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#0f1e3a,#1d3060);">🚀</div>
+        <div class="port-info">
+          <span class="port-tag">Meta Ads</span>
+          <h4>Campagne Locale Libreville</h4>
+          <p>Campagne Facebook & Instagram pour un commerce local. ROI x4 en 30 jours.</p>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="branding">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#b8982833,#c9a84c22);">✦</div>
+        <div class="port-info">
+          <span class="port-tag">Kit Réseaux Sociaux</span>
+          <h4>PME Gabonaise – Branding</h4>
+          <p>Bannières, visuels et identité visuelle unifiée sur toutes les plateformes.</p>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="web">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#0a1830,#152347);">🛒</div>
+        <div class="port-info">
+          <span class="port-tag">E-commerce</span>
+          <h4>Boutique en Ligne Gabon</h4>
+          <p>Boutique e-commerce avec paiement Mobile Money intégré et gestion des stocks.</p>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="social">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#1c2e58,#0e1a38);">📝</div>
+        <div class="port-info">
+          <span class="port-tag">Content Marketing</span>
+          <h4>Stratégie de Contenu</h4>
+          <p>Planification éditoriale, création de visuels et newsletters pour entreprise locale.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA portfolio -->
+  <section class="sec sec-bg center">
+    <span class="lbl">Vous aussi</span>
+    <h2 class="ttl">Votre Projet, Notre Prochaine Réalisation</h2>
+    <div class="divider c"></div>
+    <p style="font-size:15px;color:#5a6a88;max-width:460px;margin:0 auto 34px;line-height:1.8;">Rejoignez nos clients satisfaits et donnez une nouvelle dimension à votre activité en ligne.</p>
+    <button class="btn-g" onclick="goTo('contact')">Démarrer Mon Projet</button>
+  </section>
+
+</div><!-- /page-portfolio -->
+
+
+<!-- ============================================================
+     PAGE : CONSEILS
+============================================================ -->
+<div class="page" id="page-conseils">
+
+  <section class="sec sec-bg">
+    <span class="lbl">Blog & Ressources</span>
+    <h2 class="ttl">Conseils Digitaux</h2>
+    <div class="divider"></div>
+    <p style="font-size:15px;color:#5a6a88;max-width:580px;margin-bottom:44px;line-height:1.8;">Nos experts partagent leurs meilleures astuces pour booster votre présence en ligne au Gabon.</p>
+
+    <div class="conseils-grid">
+
+      <div class="conseil-card">
+        <div class="conseil-head">
+          <span class="conseil-cat">Réseaux Sociaux</span>
+          <h3>5 Astuces pour Booster Votre Page Facebook en 2025</h3>
+        </div>
+        <div class="conseil-body">
+          <p>Les réseaux sociaux sont devenus incontournables pour toute entreprise au Gabon. Voici comment maximiser votre portée organiquement sans dépenser une fortune.</p>
+          <ul class="conseil-tips">
+            <li>Publiez au moins 3 fois par semaine à heure fixe</li>
+            <li>Utilisez les Reels et vidéos courtes (plus de portée naturelle)</li>
+            <li>Répondez à tous les commentaires dans les 2 premières heures</li>
+            <li>Utilisez des visuels de qualité professionnelle</li>
+            <li>Boostez vos meilleures publications avec un petit budget</li>
+          </ul>
+        </div>
+        <div class="conseil-footer">
+          <span class="conseil-time">📅 Avril 2025</span>
+          <button class="read-more" onclick="goTo('contact')">En savoir + ↗</button>
+        </div>
+      </div>
+
+      <div class="conseil-card">
+        <div class="conseil-head">
+          <span class="conseil-cat">SEO & Google</span>
+          <h3>Comment Apparaître en Premier sur Google à Libreville</h3>
+        </div>
+        <div class="conseil-body">
+          <p>Le référencement local est crucial pour les entreprises gabonaises. Google Maps et Google Business Profile sont vos meilleurs alliés pour être trouvé localement.</p>
+          <ul class="conseil-tips">
+            <li>Créez et optimisez votre fiche Google Business Profile</li>
+            <li>Collectez des avis clients Google régulièrement</li>
+            <li>Utilisez des mots-clés locaux (Libreville, Gabon, Charbonnages...)</li>
+            <li>Publiez du contenu frais sur votre site chaque semaine</li>
+          </ul>
+        </div>
+        <div class="conseil-footer">
+          <span class="conseil-time">📅 Mars 2025</span>
+          <button class="read-more" onclick="goTo('contact')">En savoir + ↗</button>
+        </div>
+      </div>
+
+      <div class="conseil-card">
+        <div class="conseil-head">
+          <span class="conseil-cat">Publicité Digitale</span>
+          <h3>Débuter avec Meta Ads : Guide pour les PME Gabonaises</h3>
+        </div>
+        <div class="conseil-body">
+          <p>La publicité Facebook et Instagram permet d'atteindre précisément vos clients cibles à Libreville avec un budget maîtrisé et des résultats rapides.</p>
+          <ul class="conseil-tips">
+            <li>Définissez votre audience cible précisément (âge, ville, intérêts)</li>
+            <li>Commencez avec 5 000 à 10 000 FCFA/jour pour tester</li>
+            <li>Testez plusieurs visuels et mesurez les résultats</li>
+            <li>Retargetez les visiteurs de votre site web</li>
+          </ul>
+        </div>
+        <div class="conseil-footer">
+          <span class="conseil-time">📅 Fév. 2025</span>
+          <button class="read-more" onclick="goTo('contact')">En savoir + ↗</button>
+        </div>
+      </div>
+
+      <div class="conseil-card">
+        <div class="conseil-head">
+          <span class="conseil-cat">Site Web</span>
+          <h3>Pourquoi Votre Entreprise a Besoin d'un Site Web en 2025</h3>
+        </div>
+        <div class="conseil-body">
+          <p>Au Gabon, de plus en plus de clients cherchent les entreprises sur Google avant d'acheter. Un site vitrine est votre meilleure carte de visite numérique.</p>
+          <ul class="conseil-tips">
+            <li>Un site web fonctionne 24h/24, 7j/7 sans interruption</li>
+            <li>Il renforce votre crédibilité et votre professionnalisme</li>
+            <li>Il vous permet d'être trouvé sur Google facilement</li>
+            <li>Il présente tous vos services et tarifs en détail</li>
+          </ul>
+        </div>
+        <div class="conseil-footer">
+          <span class="conseil-time">📅 Jan. 2025</span>
+          <button class="read-more" onclick="goTo('contact')">En savoir + ↗</button>
+        </div>
+      </div>
+
+      <div class="conseil-card">
+        <div class="conseil-head">
+          <span class="conseil-cat">Branding</span>
+          <h3>L'Importance d'une Identité Visuelle Professionnelle</h3>
+        </div>
+        <div class="conseil-body">
+          <p>Un logo professionnel et une charte graphique cohérente font toute la différence pour inspirer confiance à vos clients dès le premier regard.</p>
+          <ul class="conseil-tips">
+            <li>Un logo vectoriel est indispensable pour tous les supports</li>
+            <li>Choisissez 2-3 couleurs max et soyez toujours cohérent</li>
+            <li>Uniformisez tous vos supports (carte, flyer, réseaux sociaux...)</li>
+            <li>Investissez dans un design professionnel dès le départ</li>
+          </ul>
+        </div>
+        <div class="conseil-footer">
+          <span class="conseil-time">📅 Déc. 2024</span>
+          <button class="read-more" onclick="goTo('contact')">En savoir + ↗</button>
+        </div>
+      </div>
+
+      <div class="conseil-card">
+        <div class="conseil-head">
+          <span class="conseil-cat">E-commerce</span>
+          <h3>Vendre en Ligne au Gabon : Guide Pratique Complet</h3>
+        </div>
+        <div class="conseil-body">
+          <p>Le e-commerce se développe rapidement au Gabon. Voici comment lancer votre boutique en ligne avec succès et attirer vos premiers clients rapidement.</p>
+          <ul class="conseil-tips">
+            <li>Proposez le paiement Mobile Money (Airtel Money, Moov Money)</li>
+            <li>Soignez particulièrement les photos de vos produits</li>
+            <li>Proposez la livraison sur Libreville et ses environs</li>
+            <li>Répondez aux commandes en moins d'une heure</li>
+          </ul>
+        </div>
+        <div class="conseil-footer">
+          <span class="conseil-time">📅 Nov. 2024</span>
+          <button class="read-more" onclick="goTo('contact')">En savoir + ↗</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="sec sec-dark center">
+    <span class="lbl lbl-w">Restez informé</span>
+    <h2 class="ttl ttl-w">Des Conseils Chaque Semaine</h2>
+    <div class="divider c"></div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.72);max-width:440px;margin:0 auto 34px;line-height:1.8;">Recevez nos meilleures astuces digitales directement sur WhatsApp. Rejoignez notre communauté !</p>
+    <button class="btn-g" onclick="goTo('contact')">Rejoindre la Communauté</button>
+  </section>
+
+</div><!-- /page-conseils -->
+
+
+<!-- ============================================================
+     PAGE : CONTACT
+============================================================ -->
+<div class="page" id="page-contact">
+
+  <section class="sec">
+    <span class="lbl">Parlons de votre projet</span>
+    <h2 class="ttl">Contactez-Nous</h2>
+    <div class="divider"></div>
+
+    <div class="contact-layout">
+
+      <!-- Infos -->
+      <div class="contact-info">
+        <h3>Nous sommes à votre écoute</h3>
+        <p>Que vous ayez un projet précis ou simplement des questions, notre équipe est disponible pour vous accompagner. Un audit gratuit est offert pour tout premier contact.</p>
+        <div class="contact-items">
+                        <div class="ci">
+            <div class="ci-icon">💬</div>
+            <div><h4>WhatsApp Direct</h4><a href="https://wa.me/24177519581" target="_blank" rel="noopener" style="color:var(--gold);">Cliquer pour chatter →</a></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">📞</div>
+            <div><h4>Téléphone / WhatsApp</h4><a href="tel:+24177519581">077 519 581</a></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">📧</div>
+            <div><h4>Email</h4><a href="mailto:lunedigitalg@gmail.com">lunedigitalg@gmail.com</a></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">📘</div>
+            <div><h4>Facebook</h4><a href="https://www.facebook.com/lunedigitalgabon" target="_blank" rel="noopener">Lune Digital Gabon</a></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">📍</div>
+            <div><h4>Localisation</h4><p>Libreville Charbonnages, Gabon</p></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">🕐</div>
+            <div><h4>Horaires</h4><p>Lun – Sam : 8h00 – 20h00</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="form-card">
+        <h3>Demande de Devis Gratuit</h3>
+        <span class="form-sub">Remplissez ce formulaire, nous vous répondons sous 24h.</span>
+        <div class="form-row">
+          <div class="form-group"><label>Prénom</label><input type="text" placeholder="Votre prénom" id="f-prenom"></div>
+          <div class="form-group"><label>Nom</label><input type="text" placeholder="Votre nom" id="f-nom"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="07X XXX XXX" id="f-tel"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com" id="f-email"></div>
+        </div>
+        <div class="form-group">
+          <label>Entreprise (optionnel)</label>
+          <input type="text" placeholder="Nom de votre entreprise" id="f-ent">
+        </div>
+        <div class="form-group">
+          <label>Service souhaité</label>
+          <select id="f-service">
+            <option value="">-- Choisissez un service --</option>
+            <option>Identité Visuelle & Branding</option>
+            <option>Site Web Vitrine</option>
+            <option>Boutique E-commerce</option>
+            <option>SEO & Référencement Google</option>
+            <option>Social Media Management</option>
+            <option>Publicité Meta Ads (Facebook / Instagram)</option>
+            <option>Publicité Google Ads</option>
+            <option>Pack Complet Digital</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Budget approximatif</label>
+          <select id="f-budget">
+            <option value="">-- Sélectionnez votre budget --</option>
+            <option>Moins de 50 000 FCFA</option>
+            <option>50 000 – 150 000 FCFA</option>
+            <option>150 000 – 300 000 FCFA</option>
+            <option>300 000 – 500 000 FCFA</option>
+            <option>Plus de 500 000 FCFA</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Votre message</label>
+          <textarea placeholder="Décrivez votre projet, vos objectifs, vos besoins spécifiques..." id="f-msg"></textarea>
+        </div>
+        <button class="btn-g btn-full" onclick="sendForm()">Envoyer ma Demande</button>
+        <div class="form-confirm" id="form-confirm">
+          ✔ Votre demande a bien été envoyée ! Nous vous contacterons très bientôt sur WhatsApp ou par email.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Audit strip -->
+    <div class="audit-strip">
+      <h3>🎯 Audit Gratuit Offert</h3>
+      <p>Contactez-nous dès aujourd'hui pour une analyse complète et gratuite de votre présence digitale. Nos experts vous proposent des recommandations concrètes et adaptées.</p>
+      <a href="tel:+24177519581"><button class="btn-g">Appeler Maintenant – 077 519 581</button></a>
+    </div>
+
+  </section>
+
+</div><!-- /page-contact -->
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">LUNE DIGITAL</div>
+      <p class="footer-desc">Votre agence digitale complète à Libreville, Gabon. Nous boostons votre présence en ligne et développons votre activité grâce à des solutions digitales sur mesure.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <a onclick="goTo('accueil')">Accueil</a>
+      <a onclick="goTo('apropos')">À Propos</a>
+      <a onclick="goTo('services')">Services</a>
+      <a onclick="goTo('portfolio')">Portfolio</a>
+      <a onclick="goTo('conseils')">Conseils</a>
+      <a onclick="goTo('contact')">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="tel:+24177519581">📞 077 519 581</a>
+      <a href="mailto:lunedigitalg@gmail.com">📧 lunedigitalg@gmail.com</a>
+      <a href="https://www.facebook.com/lunedigitalgabon" target="_blank" rel="noopener">📘 Lune Digital Gabon</a>
+      <a>📍 Libreville Charbonnages</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Lune Digital · Tous droits réservés · Libreville, Gabon</span>
+    <span class="footer-copy">Boostez votre présence en ligne à Libreville ^^</span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+/* ---- NAVIGATION ---- */
+const pages = ['accueil','apropos','services','portfolio','conseils','contact'];
+
+function goTo(p) {
+  pages.forEach(function(id) {
+    var pg = document.getElementById('page-' + id);
+    if (pg) pg.classList.remove('active');
+  });
+  var target = document.getElementById('page-' + p);
+  if (target) target.classList.add('active');
+
+  var btns = document.querySelectorAll('.nav-links button');
+  btns.forEach(function(b) { b.classList.remove('active'); });
+  var idx = pages.indexOf(p);
+  if (btns[idx]) btns[idx].classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ---- MENU MOBILE ---- */
+function toggleMenu() {
+  var m = document.getElementById('mobile-menu');
+  m.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+/* ---- NAV SHADOW ON SCROLL ---- */
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('main-nav');
+  if (window.scrollY > 30) { nav.classList.add('scrolled'); }
+  else { nav.classList.remove('scrolled'); }
+});
+
+/* ---- PORTFOLIO FILTRE ---- */
+function filterPort(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.port-card').forEach(function(c) {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+
+/* ---- FORMULAIRE ---- */
+function sendForm() {
+  var confirm = document.getElementById('form-confirm');
+  confirm.style.display = 'block';
+  // Scroll vers la confirmation
+  confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+<!-- BOUTON WHATSAPP FLOTTANT -->
+<style>
+#wa-float {
+  position:fixed; bottom:28px; right:28px; z-index:9999;
+  width:60px; height:60px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45);
+  transition:transform 0.2s, box-shadow 0.2s;
+  text-decoration:none;
+}
+#wa-float:hover { transform:scale(1.1); box-shadow:0 8px 30px rgba(37,211,102,0.6); }
+#wa-float::after {
+  content:""; position:absolute; width:100%; height:100%;
+  border-radius:50%; background:rgba(37,211,102,0.35);
+  animation:wa-pulse 2s infinite; z-index:-1;
+}
+@keyframes wa-pulse {
+  0%   { transform:scale(1); opacity:0.8; }
+  70%  { transform:scale(1.55); opacity:0; }
+  100% { transform:scale(1.55); opacity:0; }
+}
+#wa-label {
+  position:fixed; bottom:38px; right:96px; z-index:9998;
+  background:#0d1b3e; color:#c9a84c;
+  font-family:"Raleway",sans-serif; font-size:12px; font-weight:700;
+  padding:7px 14px; border-radius:20px; white-space:nowrap;
+  box-shadow:0 2px 12px rgba(0,0,0,0.25);
+  letter-spacing:0.5px;
+}
+</style>
+<div id="wa-label">Écrivez-nous sur WhatsApp</div>
+<a href="https://wa.me/24177519581" target="_blank" rel="noopener" id="wa-float" title="WhatsApp – Lune Digital">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+</body>
+</html>
